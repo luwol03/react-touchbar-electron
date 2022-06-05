@@ -1,6 +1,6 @@
 {
   "name": "@luwol03/react-touchbar-electron",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Declare TouchBar using React in your Electron renderer",
   "license": "ISC",
   "main": "dist/index.js",
