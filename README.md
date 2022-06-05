@@ -2,6 +2,8 @@
 
 # React TouchBar Electron
 
+## THIS IS A FORK OF THE ORIGINAL PROJECT FROM [patrikholcak](https://github.com/patrikholcak/react-touchbar-electron) AS [patrikholcak/react-touchbar-electron#71](https://github.com/patrikholcak/react-touchbar-electron/pull/72) IS NOT MERGED BECAUSE HE DIDN'T RESPOND.
+
 Define custom TouchBar layouts in your React components and have it automatically set on component mount. Easily map events, directly update state and dispatch actions.
 
 > _Note:_ `<Popover>` and `<Group>` are broken in Electron 11. See this issue for reference https://github.com/electron/electron/issues/26761
