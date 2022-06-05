@@ -4,14 +4,14 @@
   "description": "Declare TouchBar using React in your Electron renderer",
   "license": "ISC",
   "main": "dist/index.js",
-  "author": "Patrik Holcak <patrik@holcak.com> (https://patrik.dev)",
-  "homepage": "https://github.com/patrikholcak/react-touchbar-electron",
+  "author": "luwol03 <luwol03@gmail.com>",
+  "homepage": "https://github.com/luwol03/react-touchbar-electron",
   "repository": {
     "type": "git",
-    "url": "https://github.com/patrikholcak/react-touchbar-electron.git"
+    "url": "https://github.com/luwol03/react-touchbar-electron.git"
   },
   "bugs": {
-    "url": "https://github.com/patrikholcak/react-touchbar-electron/issues"
+    "url": "https://github.com/luwol03/react-touchbar-electron/issues"
   },
   "dependencies": {
     "react": "^17.0.1",
