@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+
+jobs:
+  test:
+    name: 🧪 test
+    if: ${{ !(github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Lint
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+  npm:
+    name: 📦 npm
+    needs: test
+    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Publish to npm
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          tag: latest
+          access: "public"
+
+      - name: Publish to gpr
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          registry: https://npm.pkg.github.com/
+          tag: latest
+          access: "public"
