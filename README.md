@@ -12,7 +12,7 @@ Define custom TouchBar layouts in your React components and have it automaticall
 
 ```tsx
 import * as React from "react";
-import { TouchBar, Button, Slider } from "react-touchbar-electron";
+import { TouchBar, Button, Slider } from "@luwol03/react-touchbar-electron";
 
 function App() {
   const [sliderValue, onSliderChange] = React.useState(50);
@@ -35,13 +35,13 @@ export default App;
 
 ## Installation
 
-1. `npm i react-touchbar-electron`
+1. `npm i @luwol03/react-touchbar-electron`
 
 2. Edit your electron `main` script:
 
 ```ts
 import { join } from "path";
-import { decorateWindow } from "react-touchbar-electron/decorate-window";
+import { decorateWindow } from "@luwol03/react-touchbar-electron/decorate-window";
 
 const mainWindow = new BrowserWindow({
   webPreferences: {
@@ -58,7 +58,7 @@ decorateWindow(mainWindow);
 3. edit your electron `preload` script:
 
 ```js
-import { preload } from "react-touchbar-electron/preload";
+import { preload } from "@luwol03/react-touchbar-electron/preload";
 
 // register ipc touchbarAPI on `globalThis`
 preload();
@@ -67,7 +67,7 @@ preload();
 4. edit your electron `renderer` script:
 
 ```js
-import { TouchBar, Button } from "react-touchbar-electron";
+import { TouchBar, Button } from "@luwol03/react-touchbar-electron";
 
 function App() {
   return (
